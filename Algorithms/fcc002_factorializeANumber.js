@@ -6,7 +6,12 @@
 // For example: 5! = 1 * 2 * 3 * 4 * 5 = 120
 
 function factorialize(num) {
-  return num;
+    if (num == 0) {
+        return 1;
+    } else {
+        num = num * factorialize(num - 1);
+    }
+        return num;
 }
 
 factorialize(5);
