@@ -4,7 +4,13 @@
 // Your result must be a string.
 
 function reverseString(str) {
-  return str;
+    var revStr = "";
+
+    str.split("").map(function (ch) {
+        revStr = ch + revStr;
+    });
+
+    return revStr;
 }
 
 reverseString("hello");
