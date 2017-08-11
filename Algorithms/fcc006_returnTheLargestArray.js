@@ -14,16 +14,15 @@ function largestOfFour(arr) {
     // 3. compare current element to current largestOfFour
     // 4. add big to result array
 
-    for (var i = 0; i < arr.length; i++) {
+    result = arr.map(function (a) {
         var big = 0;
-        for (var j = 0; j < arr[i].length; j++) {
-            if (arr[i][j] > big){
-                big = arr[i][j];
-            }
+        a.map(function (b) {
+            if (b > big) { big = b; }
+        });
+        return big;
         }
-        result.push(big);
-    }
+    );
     return result;
 }
 
-console.log(largestOfFour([[4, 5, 1, 3], [13, 27, 18, 26], [32, 35, 37, 39], [1000, 1001, 857, 1]]));
+largestOfFour([[4, 5, 1, 3], [13, 27, 18, 26], [32, 35, 37, 39], [1000, 1001, 857, 1]]);
